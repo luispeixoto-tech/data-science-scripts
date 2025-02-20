@@ -1,0 +1,39 @@
+Predictive Maintenance Master
+
+Description
+Airline companies are interested in predicting engine failures in advance to improve operations and reduce flight delays. Monitoring engine health and condition through sensors and telemetry data enables predictive maintenance by estimating the engine's Time-To-Failure (TTF). Consequently, maintenance work can be scheduled based on TTF predictions rather than relying solely on expensive time-based preventive maintenance.
+
+This study highlights machine learning techniques, data science methodologies, and engine measurement analysis to optimize predictive maintenance strategies.
+
+Data Source Microsoft Cortana Intelligence and open-source repositories.
+Data Processing Data smoothing through moving averages and standard deviations.
+Key Variables
+Engine ID (1 to 100)
+Cycle (sequence per engine)
+Operational settings setting1 to setting3
+Sensor readings s1 to s21
+Exploratory Data Analysis (EDA)
+Identification of multicollinearity between variables (e.g., s14 & s9, s11 & s4).
+Non-linear relationships observed between features and TTF, leading to polynomial feature transformation for model improvement.
+Normal distribution observed in most features, benefiting model performance.
+Model Selection and Justification
+Binary classification was chosen to predict whether an engine is close to failure, allowing for quick decision-making. Various models were tested, with Gaussian Naïve Bayes achieving the best performance in terms of expected profit per engine.
+
+Profit Calculation
+Profit Expected = Probability(+ve) × [TPR × Benefit (TP) + FNR × Cost (FN)] + Probability(-ve) × [TNR × Benefit (TN) + FPR × Cost (FP)]
+
+Capacity Scenarios
+26% Capacity $17.35 per engine
+28% Capacity $18.69 per engine
+31% Capacity $19K per engine (Best result with Gaussian Naïve Bayes)
+Trade-off Analysis
+26% Capacity Lower risk, lower profit.
+28% Capacity Moderate profit with balanced investment.
+31% Capacity Maximum profit but higher investment and operational risk.
+Conclusion & Action Plan
+The use of machine learning, especially Gaussian Naïve Bayes, significantly improved predictive maintenance, achieving a profit of $19K per engine with a 31% capacity strategy. Feature selection was crucial to optimizing results and reducing costs.
+
+Action Plan
+
+Implement predictive maintenance using machine learning.
+Evaluate expanding maintenance capacity to 31% to maximize profitability.
